@@ -1,17 +1,17 @@
 /**dev
  * 
  */
-var path=require('path');
-var webpack=require('webpack');
+var path = require('path');
+var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
-function assetsPath(_path){
-  return path.join(__dirname,'../dist/',_path)
+function assetsPath(_path) {
+  return path.join(__dirname, '../dist/', _path)
 }
 
-function resolve (dir) {
+function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
@@ -20,14 +20,14 @@ console.log(resolve('index.html'));
 console.log(resolve('dist/'));
 console.log(__dirname)
 
-module.exports={
-  mode:'development',
+module.exports = {
+  mode: 'development',
   devtool: 'eval-source-map',
 
-  entry:resolve('src/main.js'),
+  entry: resolve('src/main.js'),
 
-  output:{
-    path:resolve('dist'),
+  output: {
+    path: resolve('dist'),
     filename: "bundle.js",
     //chunkFilename:'[name].chunk.js',
     //publicPath:'./js/'
@@ -46,11 +46,10 @@ module.exports={
 
   // 加载器
   module: {
-    rules: [
-      {
+    rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
-       // options: vueLoaderConfig
+        // options: vueLoaderConfig
       },
       {
         test: /\.js$/,
@@ -84,20 +83,21 @@ module.exports={
     ]
   },
 
-  
+
   resolve: {
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
+      '@views': resolve('src/views'),
     },
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template:resolve('index.html'),
-      filename:assetsPath('index.html'),
+      template: resolve('index.html'),
+      filename: assetsPath('index.html'),
     }),
-    new webpack.HotModuleReplacementPlugin(),//热加载插件
+    new webpack.HotModuleReplacementPlugin(), //热加载插件
     new VueLoaderPlugin()
-    
+
   ],
 }
