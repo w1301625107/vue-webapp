@@ -5,7 +5,7 @@ var path=require('path');
 var webpack=require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
-
+const VueLoaderPlugin = require('vue-loader/lib/plugin');
 
 function assetsPath(_path){
   return path.join(__dirname,'../dist/',_path)
@@ -21,27 +21,28 @@ console.log(resolve('dist/'));
 console.log(__dirname)
 
 module.exports={
+  mode:'development',
   devtool: 'eval-source-map',
 
   entry:resolve('src/main.js'),
 
   output:{
-    path:resolve('dist/'),
+    path:resolve('dist'),
     filename: "bundle.js",
     //chunkFilename:'[name].chunk.js',
     //publicPath:'./js/'
   },
 
-  devServer: {
-    clientLogLevel: 'warning',
-    historyApiFallback:true,
-    hot: true,
-    contentBase: false, // since we use CopyWebpackPlugin.
-    compress: true,
-    open: true,
-    //publicPath: assetsPath(),
-    quiet: true, // necessary for FriendlyErrorsPlugin
-  },
+  // devServer: {
+  //   clientLogLevel: 'warning',
+  //   historyApiFallback:true,
+  //   hot: true,
+  //   contentBase: false, // since we use CopyWebpackPlugin.
+  //   compress: true,
+  //   open: true,
+  //   //publicPath: assetsPath(),
+  //   quiet: true, // necessary for FriendlyErrorsPlugin
+  // },
 
   // 加载器
   module: {
@@ -86,16 +87,17 @@ module.exports={
   
   resolve: {
     alias: {
+      'vue$': 'vue/dist/vue.esm.js',
     },
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template:resolve('index.html')
+      template:resolve('index.html'),
+      filename:assetsPath('index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(),//热加载插件
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': '"dev"',
-    }),
+    new VueLoaderPlugin()
+    
   ],
 }

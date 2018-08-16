@@ -3,7 +3,8 @@
   "version": "1.0.0",
   "description": "vue-app",
   "scripts": {
-    "dev": "webpack-dev-server --progress --inline --config build/dev.conf.js -w",
+    "dev": "webpack-dev-server --progress --inline --config build/dev.conf.js -w -p -d",
+    "pack": "webpack --progress --inline --config build/dev.conf.js -w -p -d",
     "start": "npm run dev"
   },
   "repository": {
