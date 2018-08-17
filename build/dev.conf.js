@@ -1,11 +1,15 @@
-/**dev
- * 
+/**
+ * dev
  */
 var path = require('path');
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
+//webpack4 推荐使用MiniCssExtractPlugin来处理css
+//const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const MiniCssExtractPlugin = require("mini-css-extract-plugin");
+const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 function assetsPath(_path) {
   return path.join(__dirname, '../dist/', _path)
@@ -15,34 +19,49 @@ function resolve(dir) {
   return path.join(__dirname, '..', dir)
 }
 
-console.log(resolve('src/main.js'));
-console.log(resolve('index.html'));
-console.log(resolve('dist/'));
-console.log(__dirname)
+// var website = {
+//   publicPath: "http://localhost:8080/"
+// }
+
+
 
 module.exports = {
   mode: 'development',
+
   devtool: 'eval-source-map',
 
   entry: resolve('src/main.js'),
+  //entry: ['./src/app.js', './src/main.scss'],
+
 
   output: {
     path: resolve('dist'),
     filename: "bundle.js",
+    //publicPath: website.publicPath
     //chunkFilename:'[name].chunk.js',
-    //publicPath:'./js/'
   },
 
-  // devServer: {
-  //   clientLogLevel: 'warning',
-  //   historyApiFallback:true,
-  //   hot: true,
-  //   contentBase: false, // since we use CopyWebpackPlugin.
-  //   compress: true,
-  //   open: true,
-  //   //publicPath: assetsPath(),
-  //   quiet: true, // necessary for FriendlyErrorsPlugin
-  // },
+
+  devServer: {
+    //clientLogLevel: 'warning',
+    //historyApiFallback:true,
+    hot: true,
+    contentBase: false, // since we use CopyWebpackPlugin.
+    //compress: true,
+    //open: true,
+    overlay: true,
+    //publicPath: assetsPath(),
+    //quiet: true, // necessary for FriendlyErrorsPlugin
+    proxy: {
+      '/api': {
+        target: 'http://api.douban.com/v2', //设置你调用的接口域名和端口号 别忘了加http
+        changeOrigin: true,
+        pathRewrite: {
+          '^/api': '' //这里理解成用‘/api’代替target里面的地址，后面组件中我们掉接口时直接用api代替 比如我要调用'http://40.00.100.100:3002/user/add'，直接写‘/api/user/add’即可
+        }
+      }
+    },
+  },
 
   // 加载器
   module: {
@@ -54,7 +73,16 @@ module.exports = {
       {
         test: /\.js$/,
         loader: 'babel-loader',
+        exclude: /node_modules/,
         include: [resolve('src'), resolve('test')]
+      },
+      {
+        test: /\.(scss|css)$/,
+        use: [
+          MiniCssExtractPlugin.loader,
+          'css-loader',
+          'sass-loader',
+        ],
       },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
@@ -85,6 +113,7 @@ module.exports = {
 
 
   resolve: {
+    extensions: ['.wasm', '.mjs', '.js', '.json', '.vue'], //自动解析确定的扩展
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
       '@views': resolve('src/views'),
@@ -97,7 +126,26 @@ module.exports = {
       filename: assetsPath('index.html'),
     }),
     new webpack.HotModuleReplacementPlugin(), //热加载插件
-    new VueLoaderPlugin()
+    new VueLoaderPlugin(''),
+    //new ExtractTextPlugin("css/index.css"),
+    new MiniCssExtractPlugin({
+      filename: 'css/index.css',
+    }),
+    new CleanWebpackPlugin(['dist'], {
+      root: resolve(''),
+      verbose: true,
+      dry: false
+    })
 
   ],
+  performance: {
+    hints: 'warning'
+  },
+
+  optimization: {
+    splitChunks: {
+      // include all types of chunks
+      chunks: 'all'
+    }
+  }
 }

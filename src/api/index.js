@@ -1,16 +1,26 @@
-import request from '../util/request.js'
+import fetch from './base'
 
-export function fetch(option) {
-  let url = option.url || paramError();
-  let method = option.method || "GET";
-  let param = option.method || {}
+//const BASEURL = 'http://api.douban.com/v2'
+//const BASEURL = 'https://douban.uieee.com/v2'
 
-  return new Promise((resolve, reject) => {
-    request
+const BASEURL = 'api' //和build/dev.conf.js 里devSever中proxy 相关
+
+const URL_LIST = [{
+  name: 'MOVIE_SUBJECT',
+  url: 'movie/subject'
+}]
+
+var RESTapi = {}
+
+for (let item of URL_LIST) {
+  RESTapi[item.name] = (param = paramError()) => fetch({
+    url: `${BASEURL}/${item.url}/${param}`,
+    method: item.method ? item.method : "get",
   })
 }
 
-
 function paramError() {
-  throw new Error("请求参数缺失url")
+  throw new Error("REST请求参数缺失")
 }
+
+export default RESTapi;
