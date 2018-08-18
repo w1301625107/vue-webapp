@@ -5,8 +5,8 @@ vue的个人练手项目
 
 ## 预览
 home页面
-![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/priview/Snipaste_home_1.png)
-![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/priview/Snipaste_home_2.png)
+![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_home_1.png)
+![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_home_2.png)
 
 #### 运行
 
