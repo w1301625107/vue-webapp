@@ -12,7 +12,7 @@ export default function fetch(option = {}) {
       param
     }).then(response => {
       console.log(response);
-      resolve(response)
+      resolve(response.data)
       // let data = response.data;
       // if (data.rs) {
       //   resolve(data.extend.pageInfo)

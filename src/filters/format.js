@@ -19,3 +19,11 @@ export function dateFmt(oldDate, fmt) {
       RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
   return fmt;
 }
+
+// 解决豆瓣403图片缓存问题
+export function fixImages403(_url) {
+  if (_url !== undefined) {
+    let _u = _url.substring(7);
+    return 'https://images.weserv.nl/?url=' + _u;
+  }
+}

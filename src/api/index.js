@@ -5,16 +5,19 @@ import fetch from './base'
 
 const BASEURL = 'api' //和build/dev.conf.js 里devSever中proxy 相关
 
-const URL_LIST = [{
+const MOVIE_URL_LIST = [{
   name: 'MOVIE_SUBJECT',
   url: 'movie/subject'
+}, {
+  name: 'MOVIE_IN_THEATHER',
+  url: 'movie/in_theaters'
 }]
 
 var RESTapi = {}
 
-for (let item of URL_LIST) {
+for (let item of MOVIE_URL_LIST) {
   RESTapi[item.name] = (param = paramError()) => fetch({
-    url: `${BASEURL}/${item.url}/${param}`,
+    url: `${BASEURL}/${item.url}${param}`,
     method: item.method ? item.method : "get",
   })
 }
