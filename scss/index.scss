@@ -1,5 +1,6 @@
 $font_grey:#96969b;
 $base_blue:#3478f6;
+$base_grey:#e6e6e6;
 $base_gap:15px;
 $base_radius:10px;
 $button_color:#f0f0f6;
@@ -13,14 +14,21 @@ $menu_bar_height:55px;
   letter-spacing: 1px;
 }
 
+body {
+  font-size: 16px;
+}
+
 h1,
 h2,
+h3,
 p {
   margin: $base-gap 0;
 }
 
 h1,
-h2 {
+h2,
+h3,
+  {
   letter-spacing: 2px;
 }
 
@@ -31,16 +39,24 @@ button {
   box-sizing: border-box;
 }
 
-.button_cls1 {
-  min-width: 100%;
-  max-width: 100%;
-  margin: $base_gap/2 0;
-  border-radius: $base_radius;
-  padding: $base_gap 0;
-  background-color: $button_color;
-  color: $base_blue;
-  font-weight: bold;
-  letter-spacing: 2px;
+.button {
+  &_base {
+    width: 100%;
+    border-radius: $base_radius;
+    background-color: $button_color;
+    color: $base_blue;
+    letter-spacing: 2px;
+    font-weight: bold;
+  }
+  &_cls1 {
+    padding: $base_gap 0;
+    margin: $base_gap/2 0;
+  }
+  &_cls2 {
+    border-radius: 2*$base_radius;
+    width: 80px;
+    padding: $base_gap/2 0;
+  }
 }
 
 .app {
@@ -57,23 +73,35 @@ button {
 }
 
 .divide {
-  border-top: 0.5px solid $font_grey;
+  border-top: 1px solid $base_grey;
 }
 
-.rank {
-  &_coming_soon {
-    position: relative;
-    overflow-x: auto;
-    overflow-y: hidden;
+.rank_coming_soon {
+  margin-bottom: 2*$base_gap;
+  h3,
+  p {
+    margin: $base-gap/2 0
+  }
+  h3:first-child {
+    color: $base_blue; //font-weight: normal;
+    font-size: 12px;
+    letter-spacing: 0px;
+  }
+  p:nth-child(2) {
+    font-size: 1.4rem;
+  }
+  ._scroll_wrapper {
+    position: relative; // overflow-x: auto;
+    // overflow-y: hidden;
     width: 100vw;
     margin: 0 0 0 -6vw;
-    transform: translateY(0.3rem);
-    margin-top: -.3rem;
-    padding-bottom: .3rem; //overflow: scroll; 
+    transform: translateY(0.3rem); //margin-top: -.3rem;
+    padding-bottom: .3rem;
+    overflow: scroll;
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: none;
     ._scroll {
-      //will-change: transform;
+      //margin: 0 0 0 -6vw; //will-change: transform;
       //transform: translateZ(0);
       position: relative;
       top: 0;
@@ -94,6 +122,47 @@ button {
         width: 100%;
         height: 100%;
       }
+    }
+  }
+}
+
+.rank_block_header {
+  font-weight: 600;
+  font-size: 1.6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  span {
+    color: $base_blue;
+    font-size: 1rem;
+    font-weight: normal;
+  }
+}
+
+.movie_list_item {
+  display: flex; //padding: $base_gap/2 0;
+  align-items: center;
+  ._img_wrapper {
+    min-width: 75px;
+    max-width: 75px;
+    height: 100px;
+    border-radius: $base_radius;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ._desc {
+    flex-grow: 1;
+    display: flex;
+    align-items: center;
+    height: 120px;
+    margin-left: $base-gap;
+    border-bottom: 1px solid $base_grey;
+    div:first-child {
+      flex-grow: 1;
+      text-overflow: ellipsis;
     }
   }
 }

@@ -7,7 +7,7 @@
                class="_item"
                :key="item.id">
         <div class="_wrapper">
-          <img :src="item.images.large|fixImages403"
+          <img :src="item.images.large"
                alt="">
         </div>
         <div class="_desc">
@@ -17,8 +17,8 @@
       </section>
     </div>
     <div>
-      <button class="button_cls1">兑换</button>
-      <button class="button_cls1">为我点个赞</button>
+      <button class=" button_base button_cls1">兑换</button>
+      <button class="button_base button_cls1">为我点个赞</button>
     </div>
     <div class="rule">
       <p>数据来源于豆瓣电影</p>
