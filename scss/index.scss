@@ -1,9 +1,12 @@
-@import "./normalize.css";
 $font_grey:#96969b;
 $base_blue:#3478f6;
 $base_gap:15px;
 $base_radius:10px;
 $button_color:#f0f0f6;
+$menu_bar_height:55px;
+@import "./normalize.css";
+@import "menu-bar.scss";
+@import "home-page.scss";
 * {
   font-family: '黑体';
   letter-spacing: 1px;
@@ -27,61 +30,25 @@ button {
   box-sizing: border-box;
 }
 
+.button_cls1 {
+  min-width: 100%;
+  max-width: 100%;
+  margin: $base_gap/2 0;
+  border-radius: $base_radius;
+  padding: $base_gap 0;
+  background-color: $button_color;
+  color: $base_blue;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.app {}
+
+.base_wrapper {
+  position: static;
+  padding-bottom: $menu_bar_height;
+}
+
 .content {
-  padding: 6vw; //background: linear-gradient(#ffffff, #f7f7f7);
-  .home_date {
-    color: $font_grey;
-    font-size: 14px;
-    font-weight: 600;
-  }
-  .home_movie_hot {
-    ._item {
-      margin-bottom: 2*$base_gap;
-      border-radius: $base_radius;
-      background-color: #fff;
-      filter: drop-shadow(0px 8px 5vw #e2e2e2);
-      overflow: hidden;
-    }
-    img {
-      width: 100%;
-    }
-    ._desc {
-      padding: 0 6vw;
-      overflow: hidden;
-      ._directors {
-        color: $font_grey;
-      }
-    }
-  }
-  button {
-    min-width: 100%;
-    max-width: 100%;
-    margin: $base_gap/2 0;
-    border-radius: $base_radius;
-    padding: $base_gap 0;
-    background-color: $button_color;
-    color: $base_blue;
-    font-weight: bold;
-    letter-spacing: 2px;
-  }
-  .rule {
-    margin: $base_gap 0;
-    color: $font_grey;
-    border-top: 0.5px solid $font_grey;
-    p {
-      position: relative;
-      letter-spacing: 2px;
-      &::after {
-        content: '';
-        position: absolute;
-        top: -2px;
-        width: 1.5em;
-        height: 1.5em;
-        display: inline-block;
-        background-size: 100% 100%;
-        background-repeat: no-repeat;
-        background-image: url(../src/assets/iconfont/angle-right.svg)
-      }
-    }
-  }
+  padding: 6vw 6vw 0; //background: linear-gradient(#ffffff, #f7f7f7);
 }

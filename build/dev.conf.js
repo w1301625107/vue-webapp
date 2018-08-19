@@ -45,6 +45,7 @@ module.exports = {
   devServer: {
     //clientLogLevel: 'warning',
     //historyApiFallback:true,
+    host: '0.0.0.0',
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
     //compress: true,
@@ -82,6 +83,8 @@ module.exports = {
           loader: "style-loader" // creates style nodes from JS strings
         }, {
           loader: "css-loader" // translates CSS into CommonJS
+        }, {
+          loader: "postcss-loader",
         }, {
           loader: "sass-loader" // compiles Sass to CSS
         }]

@@ -1,0 +1,45 @@
+.home_date {
+  color: $font_grey;
+  font-size: 14px;
+  font-weight: 600;
+}
+
+.home_movie_hot {
+  filter: drop-shadow(0px 0px 5vw #e2e2e2);
+  ._item {
+    margin-bottom: 2*$base_gap;
+    border-radius: $base_radius;
+    background-color: #fff;
+    overflow: hidden;
+  }
+  img {
+    width: 100%;
+  }
+  ._desc {
+    padding: 0 6vw;
+    ._directors {
+      color: $font_grey;
+    }
+  }
+}
+
+.rule {
+  margin: $base_gap 0;
+  color: $font_grey;
+  border-top: 0.5px solid $font_grey;
+  p {
+    position: relative;
+    letter-spacing: 2px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      width: 1.5em;
+      height: 1.5em;
+      display: inline-block;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-image: url(../src/assets/iconfont/angle-right.svg)
+    }
+  }
+}

@@ -1,0 +1,63 @@
+.menu_bar {
+  box-sizing: border-box; //opacity: 0.98;
+  height: 55px;
+  position: fixed;
+  z-index: 10;
+  bottom: 0px;
+  left: 0px;
+  width: 100%;
+  border-top: 0.5px solid #bebebe;
+  background-color: #f9f9f9;
+  display: flex;
+  justify-content: space-around;
+  padding: 7.5px 0 5px 0;
+  section {
+    &:hover {
+      color: $base_blue;
+    }
+    ._icon {
+      margin: 0 auto 5px;
+      width: 25px;
+      height: 25px;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      &._hot {
+        background-image: url(../src/assets/iconfont/hot.svg);
+        &:hover {
+          background-image: url(../src/assets/iconfont/hot_act.svg);
+        }
+      }
+      &._all {
+        background-image: url(../src/assets/iconfont/form.svg);
+        &:hover {
+          background-image: url(../src/assets/iconfont/form_act.svg);
+        }
+      }
+      &._star {
+        background-image: url(../src/assets/iconfont/star.svg);
+        &:hover {
+          background-image: url(../src/assets/iconfont/star_act.svg);
+        }
+      }
+      &._my {
+        background-image: url(../src/assets/iconfont/my.svg);
+        &:hover {
+          background-image: url(../src/assets/iconfont/my_act.svg);
+        }
+      }
+      &._search {
+        background-image: url(../src/assets/iconfont/search.svg);
+        &:hover {
+          background-image: url(../src/assets/iconfont/search_act.svg);
+        }
+      }
+    }
+    span {
+      text-align: center;
+      display: block;
+      font-size: 10px;
+      letter-spacing: 0px;
+      font-family: San Francisco Pro;
+    }
+  }
+}

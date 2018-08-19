@@ -19,18 +19,19 @@
       </section>
     </div>
     <div>
-      <button>兑换</button>
-      <button>为我点个赞</button>
+      <button class="button_cls1">兑换</button>
+      <button class="button_cls1">为我点个赞</button>
     </div>
     <div class="rule">
       <p>数据来源于豆瓣电影</p>
     </div>
+
   </div>
 </template>
 
 <script>
 export default {
-  name: "home_page",
+  name: "HomePage",
   data() {
     return {
       movie_list: []
@@ -39,7 +40,7 @@ export default {
   created() {
     this.$api.MOVIE_IN_THEATHER("?city=北京").then(resp => {
       console.log(resp);
-      this.movie_list = resp.subjects.slice(1, 4);
+      this.movie_list = resp.subjects.slice(0, 3);
     });
   },
   methods: {

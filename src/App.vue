@@ -1,16 +1,24 @@
 <template>
   <div id="app">
-    <router-view/>
+    <div class="base_wrapper">
+      <router-view/>
+    </div>
+    <menu-bar></menu-bar>
   </div>
 </template>
 
 <script>
-import req from "./api/index.js";
+import MenuBar from "@views/menu/index.vue";
 export default {
   name: "App",
-  created() {
-    console.log(this.$api);
-  },
+  components: { MenuBar },
+  // mounted() {
+  //   console.log(this.$api);
+  //   document.querySelector(".base_wrapper").style.height =
+  //     window.innerHeight -
+  //     document.querySelector(".menu_bar").offsetHeight +
+  //     "px";
+  // },
   methods: {}
 };
 </script>
