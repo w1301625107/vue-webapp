@@ -4,11 +4,16 @@ import Router from 'vue-router'
 Vue.use(Router)
 
 export default new Router({
-  mode: 'history', //后端支持可开
+  mode: 'hash', //后端支持可开
   routes: [{
       path: '/',
       component: () =>
         import ('@views/home/index.vue')
+    },
+    {
+      path: '/rank',
+      component: () =>
+        import ('@views/rank/index.vue')
     },
     {
       path: '/404',

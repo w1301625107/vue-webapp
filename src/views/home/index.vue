@@ -7,8 +7,6 @@
                class="_item"
                :key="item.id">
         <div class="_wrapper">
-          <!-- <img :src="this.$fixImage(item.images.large)"
-               alt=""> -->
           <img :src="item.images.large|fixImages403"
                alt="">
         </div>

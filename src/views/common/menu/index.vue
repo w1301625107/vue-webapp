@@ -21,13 +21,13 @@ export default {
           path: "Hot",
           class: "_hot",
           act: false,
-          to: ""
+          to: "/"
         },
         {
           path: "All",
           class: "_all",
           act: false,
-          to: ""
+          to: "/rank"
         },
         {
           path: "Star",
@@ -55,6 +55,7 @@ export default {
       console.log(item);
       this.resetActive();
       item.act = true;
+      this.$router.push(item.to);
     },
     resetActive() {
       this.menuList.forEach(v => {

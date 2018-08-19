@@ -43,7 +43,9 @@ button {
   letter-spacing: 2px;
 }
 
-.app {}
+.app {
+  position: relative;
+}
 
 .base_wrapper {
   position: static;
@@ -52,4 +54,46 @@ button {
 
 .content {
   padding: 6vw 6vw 0; //background: linear-gradient(#ffffff, #f7f7f7);
+}
+
+.divide {
+  border-top: 0.5px solid $font_grey;
+}
+
+.rank {
+  &_coming_soon {
+    position: relative;
+    overflow-x: auto;
+    overflow-y: hidden;
+    width: 100vw;
+    margin: 0 0 0 -6vw;
+    transform: translateY(0.3rem);
+    margin-top: -.3rem;
+    padding-bottom: .3rem; //overflow: scroll; 
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: none;
+    ._scroll {
+      //will-change: transform;
+      //transform: translateZ(0);
+      position: relative;
+      top: 0;
+      left: 0;
+      height: 100%;
+      width: 600%;
+    }
+    ._item {
+      display: inline-block;
+    }
+    ._wrapper {
+      margin: 0 10px;
+      width: 250px;
+      height: 350px;
+      border-radius: $base_radius;
+      overflow: hidden;
+      img {
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
 }
