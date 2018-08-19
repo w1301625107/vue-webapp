@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <p class="home_date">{{getFormatData()}}</p>
-    <h1>今日热映</h1>
+    <header-one title="今日热映"
+                :extra="getFormatData()"></header-one>
     <div class="home_movie_hot">
       <section v-for="item in movie_list"
                class="_item"
@@ -30,8 +30,10 @@
 </template>
 
 <script>
+import headerOne from "@views/common/header/type-1.vue";
 export default {
   name: "HomePage",
+  components: { headerOne },
   data() {
     return {
       movie_list: []

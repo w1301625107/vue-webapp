@@ -21,9 +21,9 @@ npm run dev
 #打开浏览器地址栏输入localhost:8080即可
 ```
 
-##注意
+## 注意
 .vue 文件中不要有空的style，不然编译出的文件会多出空的css
 
-##整合了
+## 整合了
 SCSS
 AXIOS

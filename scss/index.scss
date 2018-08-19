@@ -7,8 +7,9 @@ $menu_bar_height:55px;
 @import "./normalize.css";
 @import "menu-bar.scss";
 @import "home-page.scss";
+@import "header-one.scss";
 * {
-  font-family: '黑体';
+  //font-family: '黑体';
   letter-spacing: 1px;
 }
 

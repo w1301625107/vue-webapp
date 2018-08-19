@@ -8,7 +8,7 @@
 </template>
 
 <script>
-import MenuBar from "@views/menu/index.vue";
+import MenuBar from "@views/common/menu/index.vue";
 export default {
   name: "App",
   components: { MenuBar },
