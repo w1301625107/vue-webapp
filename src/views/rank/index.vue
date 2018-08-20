@@ -21,7 +21,7 @@
     <div class="divide"></div>
     <div class="rank_new_movies">
       <h3 class="rank_block_header">新片榜
-        <span>查看全部</span>
+        <button>查看全部</button>
       </h3>
       <div class="_wrapper">
         <!-- <section v-for="item in new_movies"

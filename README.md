@@ -1,12 +1,15 @@
 # vue-webapp
 vue的个人练手项目
 > 仿制IOS appstore 风格的 豆瓣电影webapp
-> - 目前只做了home页面
+> - 目前只做了home页面,榜单部分页面
 
 ## 预览
 ### home页面
 ![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_home_1.png)
 ![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_home_2.png)
+### 榜单页面
+
+![rank_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_rank_1.png)
 
 ## 运行
 
