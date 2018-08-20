@@ -1,0 +1,110 @@
+.movie_list_item {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 80px 1fr 75px;
+  grid-template-rows: $base_gap*2 auto auto $base_gap*2;
+  grid-template-areas: "_img .  ." "_img _title  _button" "_img _director  _button" "_img _divider _divider";
+  ._img_wrapper {
+    grid-area: _img;
+    min-width: 75px;
+    max-width: 75px;
+    height: 100px;
+    border-radius: $base_radius;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ._title,
+  ._director {
+    margin: $base_gap/2 0;
+    padding-left: $base_gap;
+    min-height: 1.1em;
+    max-height: 1.1em;
+    line-height: 1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0px;
+  }
+  ._title {
+    grid-area: _title;
+    font-size: 1.1rem;
+  }
+  ._director {
+    grid-area: _director;
+    font-size: 0.8rem;
+    color: $font_grey;
+  }
+  ._button {
+    grid-area: _button;
+  }
+  ._divider {
+    grid-area: _divider;
+    border-bottom: 1px solid $base_grey;
+    align-self: flex-end;
+  }
+}
+
+.movie_list_item_2 {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 110px 1fr;
+  grid-template-rows: $base_gap auto auto auto auto auto $base_gap;
+  grid-template-areas: ". .  " "_img _title" "_img _director" "_img _pubdate" "_img _desc" "_img _button" ". _divider";
+  ._img_wrapper {
+    grid-area: _img;
+    min-width: 110px;
+    max-width: 110px;
+    height: 130px;
+    border-radius: $base_radius;
+    overflow: hidden;
+    img {
+      width: 100%;
+      height: 100%;
+    }
+  }
+  ._title,
+  ._director,
+  ._desc,
+  ._pubdate {
+    margin: $base_gap/4 0;
+    margin-left: $base_gap;
+    min-height: 1.1em;
+    max-height: 1.1em;
+    line-height: 1em;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    letter-spacing: 0px;
+  }
+  ._title {
+    grid-area: _title;
+    font-size: 1.1rem;
+  }
+  ._director {
+    grid-area: _director;
+    font-size: 0.8rem;
+    color: $font_grey;
+  }
+  ._desc {
+    grid-area: _desc;
+    color: $base_blue;
+    font-size: 0.8rem;
+  }
+  ._pubdate {
+    grid-area: _pubdate;
+    color: $font_grey;
+    font-size: 0.8rem;
+  }
+  ._button {
+    margin-left: $base-gap;
+    grid-area: _button;
+  }
+  ._divider {
+    grid-area: _divider;
+    border-bottom: 1px solid $base_grey;
+    align-self: flex-end;
+  }
+}

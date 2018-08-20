@@ -6,18 +6,23 @@ import fetch from './base'
 const BASEURL = 'api' //和build/dev.conf.js 里devSever中proxy 相关
 
 const MOVIE_URL_LIST = [{
-  name: 'MOVIE_SUBJECT',
-  url: 'movie/subject'
-}, {
-  name: 'MOVIE_IN_THEATHER',
-  url: 'movie/in_theaters'
-}, {
-  name: 'MOVIE_COMING_SOON',
-  url: 'movie/coming_soon'
-}, {
-  name: 'MOVIE_NEW_MOVIES',
-  url: 'movie/new_movies'
-}, ]
+    name: 'MOVIE_SUBJECT',
+    url: 'movie/subject'
+  }, {
+    name: 'MOVIE_IN_THEATHER',
+    url: 'movie/in_theaters'
+  }, {
+    name: 'MOVIE_COMING_SOON',
+    url: 'movie/coming_soon'
+  },
+  {
+    name: 'MOVIE_US_BOX',
+    url: 'movie/us_box'
+  }, {
+    name: 'MOVIE_NEW_MOVIES',
+    url: 'movie/new_movies'
+  },
+]
 
 var RESTapi = {}
 

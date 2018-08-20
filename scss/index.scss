@@ -9,6 +9,7 @@ $menu_bar_height:55px;
 @import "menu-bar.scss";
 @import "home-page.scss";
 @import "rank-page.scss";
+@import "movie-list-item.scss";
 @import "header-one.scss";
 * {
   //font-family: '黑体';
@@ -55,8 +56,8 @@ button {
   }
   &_cls2 {
     border-radius: 2*$base_radius;
+    height: 30px;
     width: 75px;
-    padding: $base_gap/2 0;
   }
 }
 
@@ -75,150 +76,4 @@ button {
 
 .divide {
   border-top: 1px solid $base_grey;
-}
-
-.rank_coming_soon {
-  margin-bottom: 2*$base_gap;
-  h3,
-  p {
-    margin: $base-gap/2 0
-  }
-  h3:first-child {
-    color: $base_blue; //font-weight: normal;
-    font-size: 12px;
-    letter-spacing: 0px;
-  }
-  p:nth-child(2) {
-    font-size: 1.4rem;
-  }
-  ._scroll_wrapper {
-    position: relative; // overflow-x: auto;
-    // overflow-y: hidden;
-    width: 100vw;
-    margin: 0 0 0 -6vw;
-    transform: translateY(0.3rem); //margin-top: -.3rem;
-    padding-bottom: .3rem;
-    overflow: scroll;
-    -webkit-overflow-scrolling: touch;
-    ._scroll {
-      //margin: 0 0 0 -6vw; //will-change: transform;
-      //transform: translateZ(0);
-      position: relative;
-      top: 0;
-      left: 0;
-      height: 100%;
-      width: 600%;
-    }
-    ._item {
-      display: inline-block;
-    }
-    ._wrapper {
-      margin: 0 10px;
-      width: 250px;
-      height: 350px;
-      border-radius: $base_radius;
-      overflow: hidden;
-      img {
-        width: 100%;
-        height: 100%;
-      }
-    }
-  }
-}
-
-.rank_block_header {
-  font-weight: 600;
-  font-size: 1.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: $base_gap 0 $base_gap/2;
-  button {
-    padding: 0 5px;
-    color: $base_blue;
-    background: transparent;
-    border-radius: $base_radius;
-    overflow: hidden;
-    font-size: 1rem;
-    font-weight: normal;
-    &:active,
-    &:visited {
-      color: $font_grey;
-    } //-webkit-tap-highlight-color: rgba(150, 150, 155, 0.5);
-  }
-}
-
-// .movie_list_item {
-//   display: flex; //padding: $base_gap/2 0;
-//   align-items: center;
-//   ._img_wrapper {
-//     min-width: 75px;
-//     max-width: 75px;
-//     height: 100px;
-//     border-radius: $base_radius;
-//     overflow: hidden;
-//     img {
-//       width: 100%;
-//       height: 100%;
-//     }
-//   }
-//   ._desc {
-//     flex-grow: 1;
-//     display: flex;
-//     align-items: center;
-//     height: 120px;
-//     margin-left: $base-gap;
-//     border-bottom: 1px solid $base_grey;
-//     div:first-child {
-//       flex-grow: 1;
-//       text-overflow: ellipsis;
-//     }
-//   }
-// }
-.movie_list_item {
-  display: grid;
-  align-items: center;
-  grid-template-columns: 80px 1fr 75px;
-  grid-template-rows: $base_gap*2 auto auto $base_gap*2;
-  grid-template-areas: "_img .  ." "_img _title  _button" "_img _director  _button" "_img _divider _divider";
-  ._img_wrapper {
-    grid-area: _img;
-    min-width: 75px;
-    max-width: 75px;
-    height: 100px;
-    border-radius: $base_radius;
-    overflow: hidden;
-    img {
-      width: 100%;
-      height: 100%;
-    }
-  }
-  ._title,
-  ._director {
-    margin: $base_gap/2 0;
-    padding-left: $base_gap;
-    max-height: 1em;
-    line-height: 1em;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    letter-spacing: 0px;
-  }
-  ._title {
-    grid-area: _title;
-    font-size: 1.1rem;
-  }
-  ._director {
-    grid-area: _director;
-    font-size: 0.8rem;
-    color: $font_grey;
-  }
-  ._button {
-    grid-area: _button;
-  }
-  ._divider {
-    grid-area: _divider;
-    border-bottom: 1px solid $base_grey;
-    align-self: flex-end;
-  }
 }
