@@ -16,22 +16,17 @@
         </div>
       </section>
     </div>
-    <div>
-      <button class=" button_base button_cls1">兑换</button>
-      <button class="button_base button_cls1">为我点个赞</button>
-    </div>
-    <div class="rule">
-      <p>数据来源于豆瓣电影</p>
-    </div>
+    <my-footer></my-footer>
 
   </div>
 </template>
 
 <script>
 import headerOne from "@views/common/header/type-1.vue";
+import myFooter from "@views/common/footer/index.vue";
 export default {
   name: "HomePage",
-  components: { headerOne },
+  components: { headerOne, myFooter },
   data() {
     return {
       movie_list: []

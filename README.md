@@ -1,19 +1,27 @@
 # vue-webapp
-vue的个人练手项目
-> 仿制IOS appstore 风格的 豆瓣电影webapp
-> - 目前只做了home页面,榜单部分页面
+
+vue 的个人练手项目
+
+> 仿制 IOS appstore 风格的 豆瓣电影 webapp
+>
+> - 目前完成了 home 页面,榜单页面
 
 ## 预览
-### home页面
+
+### home 页面
+
 ![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_home_1.png)
 ![home_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_home_2.png)
+
 ### 榜单页面
 
 ![rank_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_rank_1.png)
+![rank_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_rank_2.png)
+![rank_page](https://raw.githubusercontent.com/w1301625107/vue-webapp/master/preview/Snipaste_rank_3.png)
 
 ## 运行
 
-### 注意项目需要node环境
+### 注意项目需要 node 环境
 
 ```bash
 #进入项目根目录
@@ -25,8 +33,14 @@ npm run dev
 ```
 
 ## 注意
-.vue 文件中不要有空的style，不然编译出的文件会多出空的css
+
+.vue 文件中不要有空的 style，不然编译出的文件会多出空的 css
+
+## 问题
+
+> 版单页面中的视频因为跨越问题，没有内容
 
 ## 整合了
+
 SCSS
 AXIOS

@@ -82,3 +82,23 @@ img {
 .divide {
   border-top: 1px solid $base_grey;
 }
+
+.base_block {
+  margin-bottom: $base-gap*2;
+}
+
+.base_scroll {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 6vw;
+  margin-left: -6vw;
+  margin-right: -6vw;
+  max-height: 400px;
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  &>*:last-child {
+    padding-right: 6vw;
+  }
+}

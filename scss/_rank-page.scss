@@ -1,11 +1,10 @@
 .rank_us_box {
-  margin-bottom: 2*$base_gap;
   h3,
   p {
     margin: $base-gap/2 0
   }
-  .base_scroll{
-    padding: $base-gap 0;
+  .base_scroll {
+    padding: $base-gap 0 $base-gap 6vw;
   }
   h3:first-child {
     color: $base_blue; //font-weight: normal;
@@ -26,7 +25,6 @@
     height: 350px;
     border-radius: $base_radius;
     overflow: hidden;
-    
   }
 }
 
@@ -53,7 +51,6 @@
 }
 
 .rank_new_movies {
-  margin-bottom: 2*$base_gap;
   .movie_list_item_wrapper {
     display: inline-block;
     width: calc(100vw - 12vw);
@@ -69,7 +66,6 @@
 }
 
 .rank_coming_soon {
-  margin-bottom: 2*$base_gap;
   .movie_list_item_wrapper:nth-child(2n) {
     ._divider {
       border-bottom: none;
@@ -87,58 +83,67 @@
   }
 }
 
-.base_scroll {
-  position: relative;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  padding-left: 6vw;
-  margin-left: -6vw;
-  margin-right: -6vw;
-  max-height: 400px;
-  -webkit-overflow-scrolling: touch;
-  overflow: scroll;
-  &>*:last-child {
-    padding-right: 6vw;
-  }
-}
-
-.hot_style{
-  ._wrapper{
-    section{
+.hot_style {
+  ._wrapper {
+    section {
       display: grid;
       align-items: center;
       grid-template-columns: 30px 1fr;
       grid-template-rows: auto 1px;
-      grid-template-areas: "_img _title"
-                 ". _divider";
+      grid-template-areas: "_img _title" ". _divider";
     }
-    section:last-child{
-._divider{
-  border-bottom:none;
-}
+    section:last-child {
+      ._divider {
+        border-bottom: none;
+      }
     }
-    ._img_wrapper{
+    ._img_wrapper {
       width: 25px;
       height: 25px;
-      img{
+      img {
         grid-area: _img;
       }
     }
-    ._divider{
+    ._divider {
       grid-area: _divider;
-    border-bottom: 1px solid $base_grey;
-    margin-left: $base-gap;
-    align-self: flex-start;
+      border-bottom: 1px solid $base_grey;
+      margin-left: $base-gap;
+      align-self: flex-start;
     }
-    ._title{
-      
-      font-size: 1.3rem;
-      //margin-left: $base-gap;
-      margin:  $base-gap*0.8 0  $base-gap*0.8  $base-gap;
-      grid-area: _title;
-      //border-bottom: 1px solid $base_grey;
+    ._title {
+      font-size: 1.3rem; //margin-left: $base-gap;
+      margin: $base-gap*0.8 0 $base-gap*0.8 $base-gap;
+      grid-area: _title; //border-bottom: 1px solid $base_grey;
     }
   }
- 
+}
+
+.most_favorite {
+  ._summary {
+    color: $font_grey;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+  }
+  ._video {
+    width: 100%;
+    border-radius: $base_radius/2;
+  }
+  .movie_list_item_wrapper {
+    ._divider {
+      border-bottom: none;
+    }
+  }
+}
+
+.quick_link {
+  p {
+    color: $base_blue;
+    font-size: 1.4rem;
+    padding-bottom: $base-gap/3;
+    border-bottom: 1px solid $base_grey;
+  }
+  p:last-child {
+    border-bottom: none;
+  }
 }
