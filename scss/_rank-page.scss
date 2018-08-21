@@ -11,14 +11,9 @@
   }
   p:nth-child(2) {
     font-size: 1.4rem;
-  }
-  ._scroll {
-    display: flex;
-    margin-left: -6vw;
-    margin-right: -6vw;
-    padding-left: 6vw; //width: 100vw; 
-    overflow: scroll;
-  }
+  } // ._item:last-child {
+  //   padding-right: 6vw;
+  // }
   ._item {
     display: inline-block;
     margin-right: $base-gap;
@@ -59,34 +54,18 @@
 
 .rank_new_movies {
   margin-bottom: 2*$base_gap;
-  ._wrapper {
-    display: flex;
-    flex-direction: column-reverse;
-    flex-wrap: wrap;
-    overflow: scroll;
-    margin-left: -6vw;
-    margin-right: -6vw;
-    padding-left: 6vw;
-    max-height: 400px; //width: 100vw;
-    .movie_list_item_wrapper {
-      display: inline-block;
-      width: calc(100vw - 20vw);
-      margin-right: 4vw;
-    }
-    .movie_list_item_wrapper:nth-child(2n) {
-      ._divider {
-        border-bottom: none;
-      }
-    }
-    .movie_list_item_wrapper:last-child {
-      padding-right: 4vw;
-    }
-    section:last-child {
-      ._divider {
-        border-bottom: none;
-      }
-    }
+  .movie_list_item_wrapper {
+    display: inline-block;
+    width: calc(100vw - 12vw);
+    margin-right: 4vw;
   }
+  .movie_list_item_wrapper:nth-child(3n) {
+    ._divider {
+      border-bottom: none;
+    }
+  } // .movie_list_item_wrapper:last-child {
+  //   padding-right: 6vw;
+  // }
 }
 
 .rank_coming_soon {
@@ -95,29 +74,31 @@
     ._divider {
       border-bottom: none;
     }
-  }
-  .movie_list_item_wrapper:last-child {
-    padding-right: 4vw;
-  }
+  } // .movie_list_item_wrapper:last-child {
+  //   padding-right: 6vw;
+  // }
   .movie_list_item_wrapper {
     display: inline-block;
-    width: calc(100vw - 16vw);
-  }
-  ._scroll {
-    //margin: 0 0 0 -6vw; //will-change: transform;
-    //transform: translateZ(0);
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
-    padding-left: 6vw;
-    margin-left: -6vw;
-    margin-right: -6vw;
-    max-height: 400px; //width: 600%;
-    //width: 100vw;
-    overflow: scroll;
+    width: calc(100vw - 12vw);
+    margin-right: 4vw;
   }
   ._item {
     display: inline-block;
+  }
+}
+
+.base_scroll {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  padding-left: 6vw;
+  margin-left: -6vw;
+  margin-right: -6vw;
+  max-height: 400px;
+  -webkit-overflow-scrolling: touch;
+  overflow: scroll;
+  &>*:last-child {
+    padding-right: 6vw;
   }
 }

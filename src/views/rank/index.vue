@@ -6,7 +6,7 @@
       <h3>北美票房榜</h3>
       <p>下列是否有你的菜呢</p>
       <!-- <div class="_scroll_wrapper"> -->
-      <div class="_scroll">
+      <div class="base_scroll">
         <section v-for="item in us_box"
                  class="_item"
                  :key="item.subject.id">
@@ -23,7 +23,7 @@
       <h3 class="rank_block_header">新片榜
         <button>查看全部</button>
       </h3>
-      <div class="_wrapper">
+      <div class="base_scroll">
         <movie-list-item :item="item"
                          v-for="item in new_movies"
                          :key="item.id"></movie-list-item>
@@ -36,7 +36,7 @@
         <button>查看全部</button>
       </h3>
       <!-- <div class="_scroll_wrapper"> -->
-      <div class="_scroll">
+      <div class="base_scroll">
         <movie-list-item :item="item"
                          clsType="type2"
                          v-for="item in coming_soon"
@@ -73,13 +73,6 @@ export default {
       this.us_box = resp.subjects.slice(0, 4);
     });
   },
-  watch: {
-    new_movies(newV, oldV) {
-      document.querySelector(".rank_coming_soon ._scroll").style.width =
-        document.querySelector(".rank_coming_soon ._item").offsetWidth *
-          (this.new_movies.length + 1) +
-        "px";
-    }
-  }
+  watch: {}
 };
 </script>
