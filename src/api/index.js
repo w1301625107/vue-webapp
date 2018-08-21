@@ -22,6 +22,10 @@ const MOVIE_URL_LIST = [{
     name: 'MOVIE_NEW_MOVIES',
     url: 'movie/new_movies'
   },
+  {
+    name: 'MOVIE_SEARCH',
+    url: 'movie/search'
+  },
 ]
 
 var RESTapi = {}
