@@ -1,4 +1,4 @@
-import fetch from './base'
+import fetch from './fetch.js'
 
 //const BASEURL = 'http://api.douban.com/v2'
 //const BASEURL = 'https://douban.uieee.com/v2'
@@ -31,9 +31,10 @@ const MOVIE_URL_LIST = [{
 var RESTapi = {}
 
 for (let item of MOVIE_URL_LIST) {
-  RESTapi[item.name] = (param = paramError()) => fetch({
-    url: `${BASEURL}/${item.url}${param}`,
-    method: item.method ? item.method : "get",
+  RESTapi[item.name] = (param) => fetch({
+    url: `${BASEURL}/${item.url}`,
+    method: item.method ? item.method : "GET",
+    param: param,
   })
 }
 

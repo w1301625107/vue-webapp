@@ -5,6 +5,7 @@ vue 的个人练手项目
 > 仿制 IOS appstore 风格的 豆瓣电影 webapp
 >
 > - 目前完成了 home 页面,榜单页面
+> - 替换Axios 为 Fetch
 
 ## 预览
 
