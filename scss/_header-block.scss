@@ -1,0 +1,21 @@
+.header_block {
+  font-weight: 600;
+  font-size: 1.4rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  margin: $base_gap 0 $base_gap/2;
+  button {
+    padding: 0 5px;
+    color: $base_blue;
+    background: transparent;
+    border-radius: $base_radius;
+    overflow: hidden;
+    font-size: 1rem;
+    font-weight: normal;
+    &:active,
+    &:visited {
+      color: $font_grey;
+    } //-webkit-tap-highlight-color: rgba(150, 150, 155, 0.5);
+  }
+}

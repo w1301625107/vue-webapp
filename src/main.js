@@ -37,6 +37,20 @@ Vue.config.devtools = true;
 //Vue.config.productionTip = false
 //Vue.use(ElementUI)
 
+//另一种注册全局组件的方式
+// const divider = {
+//   install: function (Vue) {
+//     Vue.component('divider', 
+//template: '<div class="divide"></div>'
+//})
+//   }  
+// };
+//Vue.use(divider);
+
+//注册全局分割线组件
+Vue.component("divider", {
+  template: '<div class="divide"></div>'
+})
 
 /* eslint-disable no-new */
 new Vue({

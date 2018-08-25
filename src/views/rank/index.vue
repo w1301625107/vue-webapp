@@ -1,7 +1,7 @@
 <template>
   <div class="content">
     <header-one title="榜单"></header-one>
-    <div class="divide"></div>
+    <divider></divider>
     <div class="rank_us_box base_block">
       <h3>北美票房榜</h3>
       <p>下列是否有你的菜呢</p>
@@ -16,22 +16,20 @@
         </section>
       </div>
     </div>
-    <div class="divide"></div>
     <div class="rank_new_movies base_block">
-      <h3 class="rank_block_header">新片榜
-        <button>查看全部</button>
-      </h3>
+      <divider></divider>
+      <header-blcok title="新片榜"
+                    @viewAll="$router.push('/101')"></header-blcok>
       <div class="base_scroll">
         <movie-list-item :item="item"
                          v-for="item in new_movies"
                          :key="item.id"></movie-list-item>
       </div>
     </div>
-    <div class="divide"></div>
     <div class="rank_coming_soon base_block">
-      <h3 class="rank_block_header">即将上映
-        <button>查看全部</button>
-      </h3>
+      <divider></divider>
+      <header-blcok title="即将上映"
+                    @viewAll="console.log(2)"></header-blcok>
       <div class="base_scroll">
         <movie-list-item :item="item"
                          clsType="type2"
@@ -39,11 +37,11 @@
                          :key="item.id"></movie-list-item>
       </div>
     </div>
-    <div class="divide"></div>
+
     <div class="most_favorite base_block">
-      <h3 class="rank_block_header">大家都在看
-        <button>查看全部</button>
-      </h3>
+      <divider></divider>
+      <header-blcok title="大家都在看"
+                    @viewAll="console.log(3)"></header-blcok>
       <p class="_summary">{{MOCK_FAVORITE.summary}}</p>
       <video controls
              class="_video">
@@ -56,11 +54,11 @@
       <movie-list-item :item="MOCK_FAVORITE"></movie-list-item>
 
     </div>
-    <div class="divide"></div>
+
     <div class="hot_style base_block">
-      <h3 class="rank_block_header">热门类别
-        <button>查看全部</button>
-      </h3>
+      <divider></divider>
+      <header-blcok title="热门类别"
+                    @viewAll="console.log(4)"></header-blcok>
       <div class="_wrapper">
         <section v-for="item in hot_style"
                  :key="item.title">
@@ -71,10 +69,11 @@
         </section>
       </div>
     </div>
-    <div class="divide"></div>
     <div class="quick_link base_block">
-      <h3 class="rank_block_header">快速链接
-      </h3>
+      <divider></divider>
+      <header-blcok title="快速链接"
+                    :showButton="false"
+                    @viewAll="console.log(4)"></header-blcok>
       <p>Vue 中文网</p>
       <p>Webpcak 中文文档</p>
       <p>豆瓣 开放API</p>
@@ -87,6 +86,7 @@
 
 <script>
 import headerOne from "@views/common/header/type-1.vue";
+import headerBlcok from "@views/common/header/header-block.vue";
 import myFooter from "@views/common/footer/index.vue";
 import movieListItem from "@views/common/movie-list-item/index.vue";
 const HOT_STYLE = [
@@ -123,7 +123,7 @@ const MOCK_FAVORITE = {
 };
 export default {
   name: "rankPage",
-  components: { headerOne, myFooter, movieListItem },
+  components: { headerOne, headerBlcok, myFooter, movieListItem },
   data() {
     return {
       coming_soon: [],
