@@ -1,7 +1,7 @@
 <template>
   <div class="content">
-    <header-one title="榜单"></header-one>
-    <divider></divider>
+    
+    <header-one title="榜单" :fixTop="true"></header-one>
     <div class="rank_us_box base_block">
       <h3>北美票房榜</h3>
       <p>下列是否有你的菜呢</p>

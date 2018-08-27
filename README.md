@@ -2,10 +2,11 @@
 
 vue 的个人练手项目
 
-> 仿制 IOS appstore 风格的 豆瓣电影 webapp
->
+> - 仿制 IOS appstore 风格的 豆瓣电影 webapp
+> - 为了更好的体验，推荐使用最新版本的Chrome浏览器
 > - 目前完成了 home 页面,榜单页面
-
+# 下一步计划
+> 完成查看全部以及Top250
 ## 预览
 
 ### home 页面

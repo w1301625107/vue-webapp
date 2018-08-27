@@ -6,4 +6,29 @@
     font-weight: 600;
     height: 1em;
   }
+  ._cover{
+    position: fixed;
+    top: 0;
+    z-index: 10;
+    margin-left: -6vw;
+    width: 100%;
+    height: calc(2 * 15px + 1rem);
+    background-color: #fff;
+   
+    p{
+      display: none;
+      text-align: center;
+    }
+  }
+
+  ._show{
+    p{
+      display: block;
+    }
+    
+  }
+  ._border{
+    border-bottom: 1px solid $base_grey;
+  }
+  
 }
