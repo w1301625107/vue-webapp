@@ -12,6 +12,7 @@ $menu_bar_height:55px;
 @import "movie-list-item.scss";
 @import "header-one.scss";
 @import "header-block.scss";
+
 * {
   //font-family: '黑体';
   letter-spacing: 1px;
@@ -28,13 +29,12 @@ p {
   margin: $base-gap 0;
 }
 
-h1,
-h2,
-h3,
-  {
-  letter-spacing: 2px;
-}
-
+// h1,
+// h2,
+// h3,
+//   {
+//   letter-spacing: 2px;
+// }
 button {
   margin: 0;
   padding: 0;
@@ -56,10 +56,12 @@ img {
     letter-spacing: 2px;
     font-weight: bold;
   }
+
   &_cls1 {
     padding: $base_gap 0;
     margin: $base_gap/2 0;
   }
+
   &_cls2 {
     border-radius: 2*$base_radius;
     height: 30px;
@@ -72,7 +74,6 @@ img {
 }
 
 .base_wrapper {
-  
   padding-bottom: $menu_bar_height;
 }
 
@@ -99,7 +100,17 @@ img {
   max-height: 400px;
   -webkit-overflow-scrolling: touch;
   overflow: scroll;
+
   &>*:last-child {
     padding-right: 6vw;
+  }
+}
+
+.view-wrapper {
+  position: relative;
+
+  .minirefresh-wrap {
+    position: relative;
+    overflow: unset;
   }
 }

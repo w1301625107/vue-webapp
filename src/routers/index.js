@@ -16,6 +16,11 @@ export default new Router({
         import ('@views/rank/index.vue')
     },
     {
+      path: '/top250',
+      component: () =>
+        import ('@views/top250/index.vue')
+    },
+    {
       path: '/404',
       name: 'Page404',
       component: () =>

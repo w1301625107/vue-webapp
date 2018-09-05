@@ -33,7 +33,7 @@ export default {
           path: "Star",
           class: "_star",
           act: false,
-          to: ""
+          to: "/top250"
         },
         {
           path: "Me",
