@@ -18,6 +18,10 @@ $menu_bar_height: 55px;
   letter-spacing: 1px;
 }
 
+html {
+  height: 100%;
+}
+
 body {
   font-size: 16px;
 }
@@ -101,12 +105,15 @@ img {
   -webkit-overflow-scrolling: touch;
   overflow: scroll;
 
-  & > *:last-child {
+  &>*:last-child {
     padding-right: 6vw;
   }
 }
 
-#minirefresh {
+.minirefresh-totop {
+  display: none;
+}
+
+.top250 {
   position: relative;
-  overflow: unset;
 }
