@@ -1,10 +1,10 @@
-$font_grey:#96969b;
-$base_blue:#3478f6;
-$base_grey:#e6e6e6;
-$base_gap:15px;
-$base_radius:10px;
-$button_color:#f0f0f6;
-$menu_bar_height:55px;
+$font_grey: #96969b;
+$base_blue: #3478f6;
+$base_grey: #e6e6e6;
+$base_gap: 15px;
+$base_radius: 10px;
+$button_color: #f0f0f6;
+$menu_bar_height: 55px;
 @import "./normalize.css";
 @import "menu-bar.scss";
 @import "home-page.scss";
@@ -63,7 +63,7 @@ img {
   }
 
   &_cls2 {
-    border-radius: 2*$base_radius;
+    border-radius: 2 * $base_radius;
     height: 30px;
     width: 75px;
   }
@@ -86,7 +86,7 @@ img {
 }
 
 .base_block {
-  margin-bottom: $base-gap*2;
+  margin-bottom: $base-gap * 2;
 }
 
 .base_scroll {
@@ -101,16 +101,12 @@ img {
   -webkit-overflow-scrolling: touch;
   overflow: scroll;
 
-  &>*:last-child {
+  & > *:last-child {
     padding-right: 6vw;
   }
 }
 
-.view-wrapper {
+#minirefresh {
   position: relative;
-
-  .minirefresh-wrap {
-    position: relative;
-    overflow: unset;
-  }
+  overflow: unset;
 }

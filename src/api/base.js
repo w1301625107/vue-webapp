@@ -1,26 +1,26 @@
-import request from '../util/request.js'
-
-export default function fetch(option = {}) {
-  let url = option.url ? option.url : paramError();
-  let method = option.method ? option.method : "get";
-  let param = option.param ? option.param : {};
-
-  return new Promise((resolve, reject) => {
-    request({
-      url: url,
-      method: method,
-      param
-    }).then(response => {
-      console.log(response);
-      resolve(response.data)
-      // let data = response.data;
-      // if (data.rs) {
-      //   resolve(data.extend.pageInfo)
-      // }
-    })
-  });
+export function urlMissError() {
+  throw new Error("请求参数缺失url")
 }
 
-function paramError() {
-  throw new Error("请求参数缺失url")
+export function paramToURLString(obj) {
+  return "?" + new URLSearchParams(obj).toString()
+}
+
+export function checkNullObj(obj) {
+  return Object.keys(obj).length === 0
+}
+
+//get请求参数处理
+export function getFormat(option) {
+  if (option.param) {
+    let paramType = Object.prototype.toString.call(option.param).match(
+      /\[object (.*?)\]/)[1].toLowerCase();
+    console.log("paramType:",
+      paramType)
+    if (paramType == "string") option.url = option.url + option.param;
+    if (paramType == "object") option.url = option.url + paramToURLString(
+      option.param);
+
+  }
+  return option;
 }
