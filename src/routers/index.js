@@ -27,6 +27,11 @@ export default new Router({
         import ('@views/error-page/404.vue')
     },
     {
+      path: '/item/:itemId',
+      component: () =>
+        import ('@views/item/index.vue')
+    },
+    {
       path: '*',
       component: () =>
         import ('@views/error-page/404.vue')

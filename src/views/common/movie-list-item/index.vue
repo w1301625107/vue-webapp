@@ -28,7 +28,8 @@
          class="_pubdate">{{item.pubdates[0]}}</p>
       <p v-if="clsType=='type2'"
          class="_desc">预订</p>
-      <button class="button_base button_cls2 _button">详情</button>
+      <button class="button_base button_cls2 _button"
+              @click="$router.push(`/item/${item.id}`)">详情</button>
       <div class="_divider"></div>
     </section>
   </div>

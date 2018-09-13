@@ -10,8 +10,9 @@ $menu_bar_height: 55px;
 @import "home-page.scss";
 @import "rank-page.scss";
 @import "movie-list-item.scss";
-@import "header-one.scss";
-@import "header-block.scss";
+@import "./header/header-one.scss";
+@import "./header/header-block.scss";
+@import "./header/header-return.scss";
 
 * {
   //font-family: '黑体';

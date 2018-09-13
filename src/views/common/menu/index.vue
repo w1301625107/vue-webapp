@@ -45,7 +45,7 @@ export default {
           path: "Search",
           class: "_search",
           act: false,
-          to: ""
+          to: "/item"
         }
       ]
     };
