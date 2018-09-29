@@ -3,11 +3,7 @@ import App from './App'
 import router from './routers'
 import '../scss/index.scss'
 //import store from './store';
-//import ElementUI from 'element-ui'
-//import 'element-ui/lib/theme-chalk/index.css'
 import api from './api/index'
-//访问前权限控制
-//import '@/permission' // permission control
 
 //注册全局过滤器
 import {
@@ -35,7 +31,6 @@ Vue.use(Api);
 Vue.use(Fiximage);
 Vue.config.devtools = true;
 //Vue.config.productionTip = false
-//Vue.use(ElementUI)
 
 //另一种注册全局组件的方式
 // const divider = {
