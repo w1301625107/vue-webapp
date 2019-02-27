@@ -136,14 +136,3 @@
   }
 }
 
-.quick_link {
-  p {
-    color: $base_blue;
-    font-size: 1.4rem;
-    padding-bottom: $base-gap/3;
-    border-bottom: 1px solid $base_grey;
-  }
-  p:last-child {
-    border-bottom: none;
-  }
-}

@@ -1,6 +1,5 @@
 <template>
   <div class="content">
-    
     <header-one title="榜单" :fixTop="true"></header-one>
     <div class="rank_us_box base_block">
       <h3>北美票房榜</h3>
@@ -69,18 +68,8 @@
         </section>
       </div>
     </div>
-    <div class="quick_link base_block">
-      <divider></divider>
-      <header-blcok title="快速链接"
-                    :showButton="false"
-                    @viewAll="console.log(4)"></header-blcok>
-      <p>Vue 中文网</p>
-      <p>Webpcak 中文文档</p>
-      <p>豆瓣 开放API</p>
-      <p>Axios</p>
-      <p>Scss~Postcss</p>
-    </div>
-    <my-footer></my-footer>
+    <friendly-link/>
+    <my-footer/>
   </div>
 </template>
 
@@ -88,6 +77,7 @@
 import headerOne from "@views/common/header/type-1.vue";
 import headerBlcok from "@views/common/header/header-block.vue";
 import myFooter from "@views/common/footer/index.vue";
+import friendlyLink from "@views/common/footer/friendly-link.vue";
 import movieListItem from "@views/common/movie-list-item/index.vue";
 const HOT_STYLE = [
   {
@@ -123,7 +113,7 @@ const MOCK_FAVORITE = {
 };
 export default {
   name: "rankPage",
-  components: { headerOne, headerBlcok, myFooter, movieListItem },
+  components: { headerOne, headerBlcok, myFooter, friendlyLink, movieListItem },
   data() {
     return {
       coming_soon: [],

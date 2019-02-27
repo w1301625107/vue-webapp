@@ -45,7 +45,7 @@ module.exports = {
   devServer: {
     //clientLogLevel: 'warning',
     //historyApiFallback:true,
-    host: '0.0.0.0',
+    host: '127.0.0.1',
     hot: true,
     contentBase: false, // since we use CopyWebpackPlugin.
     //compress: true,

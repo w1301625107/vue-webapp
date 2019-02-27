@@ -1,0 +1,32 @@
+.rule {
+  margin: $base_gap 0;
+  color: $font_grey;
+  border-top: 0.5px solid $base_grey;
+  p {
+    position: relative;
+    letter-spacing: 2px;
+    &::after {
+      content: '';
+      position: absolute;
+      top: -2px;
+      width: 1.5em;
+      height: 1.5em;
+      display: inline-block;
+      background-size: 100% 100%;
+      background-repeat: no-repeat;
+      background-image: url(../src/assets/iconfont/angle-right.svg)
+    }
+  }
+}
+
+.quick_link {
+  p {
+    color: $base_blue;
+    font-size: 1.4rem;
+    padding-bottom: $base-gap/3;
+    border-bottom: 1px solid $base_grey;
+  }
+  p:last-child {
+    border-bottom: none;
+  }
+}

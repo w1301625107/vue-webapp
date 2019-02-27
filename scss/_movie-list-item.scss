@@ -1,3 +1,19 @@
+.m_bigPost{
+  border-radius: $base_radius;
+  background-color: #fff;
+  overflow: hidden;
+  
+  img {
+    width: 100%;
+  }
+  ._desc {
+    padding: 0 6vw;
+    ._directors {
+      color: $font_grey;
+    }
+  }
+}
+
 .movie_list_item {
   display: grid;
   align-items: center;
