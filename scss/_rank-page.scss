@@ -1,98 +1,13 @@
-.rank_us_box {
-  h3,
-  p {
-    margin: $base-gap/2 0
-  }
-  .base_scroll {
-    padding: $base-gap 0 $base-gap 6vw;
-  }
-  h3:first-child {
-    color: $base_blue; //font-weight: normal;
-    font-size: 12px;
-    letter-spacing: 0px;
-  }
-  p:nth-child(2) {
-    font-size: 1.4rem;
-  } // ._item:last-child {
-  //   padding-right: 6vw;
-  // }
-  ._item {
-    display: inline-block;
-    margin-right: $base-gap;
-  }
-  ._wrapper {
-    width: 250px;
-    height: 350px;
-    border-radius: $base_radius;
-    overflow: hidden;
-  }
-}
-
-.rank_block_header {
-  font-weight: 600;
-  font-size: 1.4rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  margin: $base_gap 0 $base_gap/2;
-  button {
-    padding: 0 5px;
-    color: $base_blue;
-    background: transparent;
-    border-radius: $base_radius;
-    overflow: hidden;
-    font-size: 1rem;
-    font-weight: normal;
-    &:active,
-    &:visited {
-      color: $font_grey;
-    } //-webkit-tap-highlight-color: rgba(150, 150, 155, 0.5);
-  }
-}
-
-.rank_new_movies {
-  .movie_list_item_wrapper {
-    display: inline-block;
-    width: calc(100vw - 12vw);
-    margin-right: 4vw;
-  }
-  .movie_list_item_wrapper:nth-child(3n) {
-    ._divider {
-      border-bottom: none;
-    }
-  } // .movie_list_item_wrapper:last-child {
-  //   padding-right: 6vw;
-  // }
-}
-
-.rank_coming_soon {
-  .movie_list_item_wrapper:nth-child(2n) {
-    ._divider {
-      border-bottom: none;
-    }
-  } // .movie_list_item_wrapper:last-child {
-  //   padding-right: 6vw;
-  // }
-  .movie_list_item_wrapper {
-    display: inline-block;
-    width: calc(100vw - 12vw);
-    margin-right: 4vw;
-  }
-  ._item {
-    display: inline-block;
-  }
-}
-
 .hot_style {
   ._wrapper {
-    section {
+    ._item {
       display: grid;
       align-items: center;
       grid-template-columns: 30px 1fr;
       grid-template-rows: auto 1px;
       grid-template-areas: "_img _title" ". _divider";
     }
-    section:last-child {
+    ._item:last-child {
       ._divider {
         border-bottom: none;
       }
@@ -118,21 +33,5 @@
   }
 }
 
-.most_favorite {
-  ._summary {
-    color: $font_grey;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-  }
-  ._video {
-    width: 100%;
-    border-radius: $base_radius/2;
-  }
-  .movie_list_item_wrapper {
-    ._divider {
-      border-bottom: none;
-    }
-  }
-}
+
 

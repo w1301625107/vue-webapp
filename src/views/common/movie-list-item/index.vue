@@ -1,22 +1,6 @@
 <template>
-  <!-- <section :key="item.id"
-           class="movie_list_item">
-    <div class="_img_wrapper">
-      <img :src="item.images.large"
-           alt="">
-    </div>
-    <div class="_desc">
-      <div>
-        <p>{{item.title}}</p>
-        <p>{{item.directors[0].name}}</p>
-      </div>
-      <div>
-        <button class="button_base button_cls2">详情</button>
-      </div>
-    </div>
-  </section> -->
-  <div class="movie_list_item_wrapper">
-    <section :key="item.id"
+  <div class="m-list-item_wrapper">
+    <div :key="item.id"
              :class="[itemCls]">
       <div class="_img_wrapper">
         <img :src="item.images.large"
@@ -31,7 +15,7 @@
       <button class="button_base button_cls2 _button"
               @click="$router.push(`/item/${item.id}`)">详情</button>
       <div class="_divider"></div>
-    </section>
+    </div>
   </div>
 </template>
 
@@ -55,10 +39,7 @@ export default {
   },
   created() {
     this.itemCls =
-      this.clsType == "type2" ? "movie_list_item_2" : "movie_list_item";
+      this.clsType == "type2" ? "m-list-item_2" : "m-list-item";
   }
 };
 </script>
-
-<style>
-</style>

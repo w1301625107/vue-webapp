@@ -14,7 +14,7 @@
 <script>
 import headerBlcok from "@views/common/header/header-block.vue";
 export default {
-  name: "FriendlyLink",
+  name: "FriendLink",
   components: { headerBlcok }
 }
 </script>

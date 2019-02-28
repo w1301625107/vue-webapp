@@ -1,6 +1,6 @@
 {
   "name": "vue-webapp",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "vue-app",
   "scripts": {
     "dev": "webpack-dev-server --progress --color --inline --config build/dev.conf.js -w -p -d",

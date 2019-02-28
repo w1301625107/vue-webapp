@@ -5,6 +5,8 @@ $base_gap: 15px;
 $base_radius: 10px;
 $button_color: #f0f0f6;
 $menu_bar_height: 55px;
+$magic_padding:6vw;
+
 @import "./normalize.css";
 @import "menu-bar.scss";
 @import "others.scss";
@@ -84,7 +86,7 @@ img {
 }
 
 .content {
-  padding: 6vw 6vw 0; //background: linear-gradient(#ffffff, #f7f7f7);
+  padding: $magic_padding $magic_padding 0; //background: linear-gradient(#ffffff, #f7f7f7);
 }
 
 .divide {
@@ -100,22 +102,15 @@ img {
   display: flex;
   flex-direction: column;
   flex-wrap: wrap;
-  padding-left: 6vw;
-  margin-left: -6vw;
-  margin-right: -6vw;
+  padding-left: $magic_padding;
+  margin-left: -$magic_padding;
+  margin-right: -$magic_padding;
   max-height: 400px;
   -webkit-overflow-scrolling: touch;
   overflow: scroll;
 
   &>*:last-child {
-    padding-right: 6vw;
+    padding-right: $magic_padding;
   }
 }
 
-.minirefresh-totop {
-  display: none;
-}
-
-.top250 {
-  position: relative;
-}
