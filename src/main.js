@@ -29,7 +29,7 @@ const Fiximage = {
 
 Vue.use(Api);
 Vue.use(Fiximage);
-Vue.config.devtools = true;
+Vue.config.devtools = ENVIRONMENT === 'DEV' ? true :false;
 //Vue.config.productionTip = false
 
 //另一种注册全局组件的方式

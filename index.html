@@ -19,13 +19,18 @@
   <link rel="icon"
         type="image/x-icon"
         href="https://assets-cdn.github.com/favicon.ico">
-  <style>
-  </style>
+  <link rel="stylesheet" type="text/css" href="static/loading.css">
+  <link rel="stylesheet" type="text/css" href="static/normalize.css">
 </head>
 
 <body>
   <div id="app"
-       v-transfer-dom></div>
+       v-transfer-dom>
+      <div class="load-container">
+            <div class="boxLoading"></div>
+      </div>
+      <h1 style="text-align: center;">努力加载中...</h1>
+  </div>
   <!-- built files will be auto injected -->
 </body>
 

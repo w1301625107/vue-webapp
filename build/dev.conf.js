@@ -1,44 +1,29 @@
 /**
  * dev
  */
-var path = require('path');
-var webpack = require('webpack');
-var HtmlWebpackPlugin = require('html-webpack-plugin');
-const FriendlyErrorsPlugin = require('friendly-errors-webpack-plugin')
+const path = require('path');
+const webpack = require('webpack');
+const HtmlWebpackPlugin = require('html-webpack-plugin');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
-//webpack4 推荐使用MiniCssExtractPlugin来处理css
-//const ExtractTextPlugin = require('extract-text-webpack-plugin')
-const MiniCssExtractPlugin = require("mini-css-extract-plugin");
-const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 function assetsPath(_path) {
   return path.join(__dirname, '../dist/', _path)
 }
 
-function resolve(dir) {
+function rootDir(dir) {
   return path.join(__dirname, '..', dir)
 }
-
-// var website = {
-//   publicPath: "http://localhost:8080/"
-// }
-
-
 
 module.exports = {
   mode: 'development',
 
   devtool: 'eval-source-map',
 
-  entry: resolve('src/main.js'),
-  //entry: ['./src/app.js', './src/main.scss'],
-
+  entry: rootDir('src/main.js'),
 
   output: {
-    path: resolve('dist'),
-    filename: "bundle.js",
-    //publicPath: website.publicPath
-    //chunkFilename:'[name].chunk.js',
+    path: rootDir('dist'),
+    filename: '[name].[hash].js'
   },
 
 
@@ -47,15 +32,14 @@ module.exports = {
     //historyApiFallback:true,
     host: '127.0.0.1',
     hot: true,
-    contentBase: false, // since we use CopyWebpackPlugin.
+    contentBase: rootDir(''),
     //compress: true,
     //open: true,
     overlay: true,
-    //publicPath: assetsPath(),
+    // publicPath: 'static',
     //quiet: true, // necessary for FriendlyErrorsPlugin
     proxy: {
       '/api': {
-
         target: 'https://douban.uieee.com/v2/', //设置你调用的接口域名和端口号 别忘了加http
         //target: 'http://api.douban.com/v2', //设置你调用的接口域名和端口号 别忘了加http
         changeOrigin: true,
@@ -71,13 +55,12 @@ module.exports = {
     rules: [{
         test: /\.vue$/,
         loader: 'vue-loader',
-        // options: vueLoaderConfig
       },
       {
         test: /\.js$/,
         loader: 'babel-loader',
         exclude: /node_modules/,
-        include: [resolve('src'), resolve('test')]
+        include: [rootDir('src'), rootDir('test')]
       },
       {
         test: /\.(scss|css)$/,
@@ -91,15 +74,6 @@ module.exports = {
           loader: "sass-loader" // compiles Sass to CSS
         }]
       },
-      //开发环境不用MiniCssExtractPlugin
-      // {
-      //   test: /\.(scss|css)$/,
-      //   use: [
-      //     MiniCssExtractPlugin.loader,
-      //     'css-loader',
-      //     'sass-loader',
-      //   ],
-      // },
       {
         test: /\.(png|jpe?g|gif|svg)(\?.*)?$/,
         loader: 'url-loader',
@@ -129,30 +103,23 @@ module.exports = {
 
 
   resolve: {
-    extensions: ['.wasm', '.mjs', '.js', '.json', '.vue'], //自动解析确定的扩展
+    extensions: ['.mjs', '.js', '.json', '.vue'], //自动解析确定的扩展
     alias: {
       'vue$': 'vue/dist/vue.esm.js',
-      '@views': resolve('src/views'),
+      '@views': rootDir('src/views'),
     },
   },
 
   plugins: [
     new HtmlWebpackPlugin({
-      template: resolve('index.html'),
+      template: rootDir('index.html'),
       filename: assetsPath('index.html'),
+    }),
+    new webpack.DefinePlugin({
+      'ENVIRONMENT': '"DEV"'
     }),
     new webpack.HotModuleReplacementPlugin(), //热加载插件
     new VueLoaderPlugin(''),
-    //new ExtractTextPlugin("css/index.css"),
-    new MiniCssExtractPlugin({
-      filename: 'css/index.css',
-    }),
-    new CleanWebpackPlugin(['dist'], {
-      root: resolve(''),
-      verbose: true,
-      dry: false
-    })
-
   ],
   performance: {
     hints: 'warning'
